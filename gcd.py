@@ -1,5 +1,7 @@
 import math
 
+# Find the greatest common divisor for a, b. (Euclidean algorithm)
+# src: https://wstein.org/ent/ent.pdf
 def gcd(a,b):
     a = abs(a)
     b = abs(b)
