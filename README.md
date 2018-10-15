@@ -1,3 +1,3 @@
 # code-collection
 
-Random code snippets.
+Random code snippets that I wrote.
