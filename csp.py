@@ -1,6 +1,7 @@
 # For more information, see:
 # https://github.com/darkeclipz/or/blob/master/csp/CSP%20(Constraint%20Satisfaction%20Problem).ipynb
 import copy
+import operator
 
 class Variable():
     def __init__(self, name, D): 
