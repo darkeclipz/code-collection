@@ -1,0 +1,1 @@
+def wrap(xs, n): return xs[n%len(xs):] + xs[:n%len(xs)]
