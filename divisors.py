@@ -11,4 +11,4 @@ def divisors(x):
                 result.append(i)
                 result.append(x//i)
 
-    return result
+    return set(result)
