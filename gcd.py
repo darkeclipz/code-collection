@@ -7,9 +7,7 @@ def gcd(a,b):
     b = abs(b)
     if a == b: return a
     if b > a:
-        swap = a
-        a = b
-        b = swap
+        a, b = b, a
     q = a // b
     r = a - b * q
     while r != 0:
