@@ -1,5 +1,7 @@
 import math
 
+# Returns all the divisors for a number x, including x.
+# e.g divisors(1001) = [1, 7, 11, 13, 77, 91, 143, 1001]
 def divisors(x):
     result = []
     limit = math.ceil(math.sqrt(x))
@@ -11,4 +13,4 @@ def divisors(x):
                 result.append(i)
                 result.append(x//i)
 
-    return set(result)
+    return sorted(list(set(result)))
