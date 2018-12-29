@@ -1,3 +1,3 @@
 # code-collection
 
-Random code snippets that I wrote.
+A collection algorithms and other useful functions, for solving challenges on Project Euler and HackerRank.
