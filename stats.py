@@ -2,7 +2,7 @@ import math
 import numpy as np
 import scipy.stats
 
-def mean(xs): return np.mean(xs)
+def mean(xs): return sum(xs) / len(xs)
 def wmean(xs, ws): return sum([ws[i] * xs[i] for i in range(len(xs))]) / sum(ws)
 
 def sd(xs): 
@@ -48,3 +48,20 @@ def normal(x, mu, sigma): return 1 / (sigma * math.sqrt(2 * math.pi)) * math.exp
 def normal_cdf(x, mu, sigma): return 1/2 * (1 + math.erf((x - mu)/(sigma * math.sqrt(2))))
 
 def percentage(x): return x * 100
+
+def pearson_corr(xs, ys):
+    if len(xs) is not len(ys):
+        raise ValueError('Arrays should have equal dimensions.')
+    mx = mean(xs); my = mean(ys)
+    sx = sd(xs); sy = sd(ys)
+    return sum([(xs[i] - mx) * (ys[i] - my) for i in range(len(xs))]) / (len(xs) * sx * sy)
+
+def spearman_rank_corr(xs, ys):
+    if len(xs) is not len(ys):
+        raise ValueError('Arrays must have equal dimension.')
+    N = len(xs)
+    x = sorted(xs); y = sorted(ys)
+    rx = {x:n for x,n in zip(x, range(N))}
+    ry = {y:n for y,n in zip(y, range(N))}
+    ds = [ (rx[xs[i]] - ry[ys[i]])**2 for i in range(N)]
+    return 1 - 6*sum(ds) / (N**3 - N)
