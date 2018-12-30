@@ -1,7 +1,7 @@
 import functools
 
 # Create a function composition of multiple functions.
-def compose(*functions):
+def compose(*fs):
     return functools.reduce(lambda f, g: lambda x: f(g(x)), fs, lambda x: x)
 
 # Rotate the list values n steps with wrapping.
