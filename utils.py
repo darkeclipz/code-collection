@@ -1,3 +1,9 @@
+import functools
+
+# Create a function composition of multiple functions.
+def compose(*functions):
+    return functools.reduce(lambda f, g: lambda x: f(g(x)), fs, lambda x: x)
+
 # Rotate the list values n steps with wrapping.
 def wrap(xs, n): return xs[n%len(xs):] + xs[:n%len(xs)]
 
@@ -29,9 +35,3 @@ def mutate_string(string, position, character):
 def swap_case(s):
     swap = lambda c: chr(c^32) if 123 > c > 96 or 91 > c > 64 else chr(c)
     return ''.join(map(swap, map(ord, s)))
-
-# Create a function composition of two functions.
-def compose2(f, g): return lambda x: f(g(x))
-
-# Create a function composition of three functions.
-def compose3(f, g, h): return lambda x: f(g(h(x)))
