@@ -2,8 +2,7 @@
 from math import sqrt, log
 
 # Test of a number x is a Fibonacci number.
-def fib_test(x): 
-    return sqrt(5*x**2+4).is_integer() or sqrt(5*x**2-4).is_integer()
+def fib_test(x): return any([sqrt(d).is_integer() for d in [5*x**2+4, 5*x**2-4]])
 
 # Get the Fibonacci number (Fn) at position n.
 def fib(n):
