@@ -24,3 +24,8 @@ def count_substring(string, sub_string):
 # Change a character in a string at a position.
 def mutate_string(string, position, character):
     return string[:position] + character + string[position+1:]
+
+# Swap lower case to upper case, and upper case to lower case.
+def swap_case(s):
+    swap = lambda c: chr(c^32) if 123 > c > 96 or 91 > c > 64 else chr(c)
+    return ''.join(map(swap, map(ord, s)))
