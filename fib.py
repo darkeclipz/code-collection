@@ -17,6 +17,6 @@ def invfib(x):
     phi = (1+sqrt(5)) / 2
     rad = 5 * x**2
     f = lambda r: log((x * sqrt(5) + sqrt(r)) / 2, phi)
-    if sqrt(5*x**2+4).is_integer(): return round(f(rad + 4))
-    if sqrt(5*x**2-4).is_integer(): return round(f(rad - 4))
-    raise ValueError('Non integer solution.')
+    if sqrt(5*x**2+4).is_integer(): 
+        return round(f(rad + 4))
+    return round(f(rad - 4))
