@@ -7,5 +7,4 @@ def compose(*fs):
 is_fib = lambda x: any([sqrt(d).is_integer() for d in [5*x**2+4, 5*x**2-4]])
 
 seq = '1 2 3 4 5 6 7 8 9 10 11 12 13 14'
-f = compose(int, is_fib, int)
-sum(map(f, seq.split(' ')))
+sum(map(compose(int, is_fib, int), seq.split(' ')))
