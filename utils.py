@@ -6,7 +6,7 @@ def compose3(f, g, h): return lambda x: f(g(h(x)))
 def compose(*fs):
     return functools.reduce(lambda f, g: lambda x: f(g(x)), fs, lambda x: x)
 
-# Rotate the list values n steps with wrapping.
+# Rotate the list values n steps to the left with wrapping.
 def wrap(xs, n): return xs[n%len(xs):] + xs[:n%len(xs)]
 
 # Split a list into two pieces at index n.
