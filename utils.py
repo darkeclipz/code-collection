@@ -18,6 +18,8 @@ def reverse(xs): return xs[::-1]
 # Swap two variables.
 def swap(a, b): return b, a
 
+def between(x, a, b): return b > x > a
+
 # Count occurences of a sub string in a string.
 def count_substring(string, sub_string):
     haystack = list(string)
